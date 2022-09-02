@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mathexam" class="com.example.dependency_injuction_for_object.Exam"></bean>
+    <bean id="student" class="com.example.dependency_injuction_for_object.Student">
+        <constructor-arg name="id" value="1" type="int"/>
+        <constructor-arg name="exam" ref="mathexam">
+
+
+        </constructor-arg>
+    </bean>
+    <bean id="student1" class="com.example.dependency_injuction_for_object.AnotherStudent">
+      <constructor-arg name="exam" ref="mathexam">
+
+
+      </constructor-arg>
+
+    </bean>
+</beans>
